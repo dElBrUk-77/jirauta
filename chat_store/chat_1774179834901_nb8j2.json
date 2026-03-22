@@ -1,0 +1,28 @@
+{
+  "id": "chat_1774179834901_nb8j2",
+  "title": "Qué habíamos hecho en este chat?",
+  "createdAt": "2026-03-22T11:43:54.901Z",
+  "updatedAt": "2026-03-22T11:48:10.527Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Qué habíamos hecho en este chat?",
+      "timestamp": "2026-03-22T11:47:39.615Z"
+    },
+    {
+      "role": "assistant",
+      "content": "En este chat hemos estado revisando y gestionando tickets en Jira del proyecto KAN. Hemos discutido varios tickets, incluyendo sus descripciones, estados y detalles relevantes. Si necesitas realizar alguna acción específica con estos tickets, como leer, actualizar o mover alguno, házmelo saber. \n\n[READ_TICKETS: texto_busqueda | maxResultados]",
+      "timestamp": "2026-03-22T11:47:39.615Z"
+    },
+    {
+      "role": "user",
+      "content": "Asigna la tarjeta SCRUM-1 a fernando",
+      "timestamp": "2026-03-22T11:48:10.526Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Parece que la tarjeta que mencionas, SCRUM-1, no pertenece al proyecto KAN, ya que los tickets que estamos gestionando son del proyecto KAN. Por favor, verifica el número de la tarjeta y asegúrate de que sea parte del proyecto KAN. \n\nSi deseas asignar un ticket del proyecto KAN, por favor indícame el número correcto. \n\n[READ_TICKETS: SCRUM-1 | 1]\n\n📚 Tickets encontrados:\n- KAN-20 | Historia | Por hacer | Sin asignar | Prioridad: Medium\n  Título: Establecer un proceso de revisión de código\n  Descripción: Implementar un proceso de revisión de código que garantice que los cambios sean revisados por otros miembros del equipo antes de ser fusionados. Esto ayudará a mejorar la calidad del código y a fomentar la colaboración en el equipo.\n  Reporter: Nano Caruncho | Labels: N/A | Components: N/A",
+      "timestamp": "2026-03-22T11:48:10.526Z"
+    }
+  ]
+}

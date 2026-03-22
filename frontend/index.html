@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jirauta v3 - Frontend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/styles.css" />
+</head>
+<body>
+  <div id="config-screen">
+    <div class="config-card">
+      <div class="logo">
+        <div class="logo-icon">🤖</div>
+        <div><h1>Jirauta v3</h1><span>Bimodal Intelligence Agent</span></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="field">
+          <label>Jira Domain</label>
+          <input id="jira-domain" type="text" placeholder="tu-dominio.atlassian.net" />
+        </div>
+        <div class="field">
+          <label>Project Key</label>
+          <input id="jira-project" type="text" placeholder="SCRUM" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input id="jira-email" type="email" placeholder="tu@email.com" />
+      </div>
+
+      <div class="field">
+        <label>Jira API Token</label>
+        <input id="jira-token" type="password" placeholder="ATATT..." />
+      </div>
+
+      <div class="grid-2">
+        <div class="field">
+          <label>Proveedor LLM</label>
+          <select id="llm-provider">
+            <option value="gemini">Google Gemini</option>
+            <option value="claude">Anthropic Claude</option>
+            <option value="openai">OpenAI</option>
+            <option value="copilot">GitHub Copilot (preview)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Modelo LLM</label>
+          <select id="llm-model" disabled>
+            <option value="">Primero carga los modelos...</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>API Key del proveedor</label>
+        <input id="llm-api-key" type="password" placeholder="Introduce tu API key..." />
+      </div>
+
+      <button class="btn-secondary" id="load-models-btn">Cargar modelos disponibles</button>
+
+      <div id="config-feedback" class="status-msg hidden"></div>
+
+      <button class="btn-primary" id="connect-btn">Inicializar Agente →</button>
+    </div>
+  </div>
+
+  <div id="app-screen" class="hidden">
+    <div class="sidebar">
+      <h3>ACCIONES</h3>
+      <button class="btn-primary quick-btn" data-text="Crea una historia de usuario para un sistema de login con redes sociales">✨ Crear Historia</button>
+      <button class="btn-secondary quick-btn" data-text="Lista los tickets más recientes del proyecto con su estado">📚 Listar tarjetas</button>
+      <button class="btn-secondary quick-btn" data-text="Muéstrame los estados del workflow de este proyecto">🧭 Ver estados</button>
+      <button class="btn-secondary quick-btn" data-text="Promociona la tarjeta SCRUM-1 al siguiente estado">🚀 Cambiar estado</button>
+      <button class="btn-secondary quick-btn" data-text="Actualiza las labels de SCRUM-1 a backend,urgent">🏷️ Actualizar etiqueta</button>
+      <button class="btn-secondary quick-btn" data-text="Asigna la tarjeta SCRUM-1 a fernando">👤 Asignar tarjeta</button>
+
+      <h3 class="sidebar-section">CHATS</h3>
+      <button class="btn-secondary" id="new-chat-btn">＋ Nuevo chat</button>
+      <div id="chat-list" class="chat-list"></div>
+
+      <div id="status-area">🟢 <span id="active-model">Model: -</span></div>
+    </div>
+
+    <div class="main">
+      <div class="chat-area" id="chat-area"></div>
+      <div class="input-area">
+        <div class="input-box">
+          <textarea id="chat-input" rows="1" placeholder="Escribe aquí..."></textarea>
+          <button class="btn-primary send-btn" id="send-btn">↑</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/frontend/app.js"></script>
+</body>
+</html>
